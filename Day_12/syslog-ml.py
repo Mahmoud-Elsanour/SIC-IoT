@@ -3,7 +3,7 @@ from sklearn.linear_model import LinearRegression
 import datetime
 import time
 
-log_file_path = '2023-09-07-pub.log'
+log_file_path = '2023-09-08-pub.log'
 
 while True:
     try:
@@ -18,6 +18,8 @@ while True:
         X = daily_cpu_usage['Date'].values.reshape(-1, 1)
         y = daily_cpu_usage['CPU Usage'].values
 
+
+        print(X, y,'\n\n', daily_cpu_usage,'\n\n\n')
         model = LinearRegression()
         model.fit(X, y)
 
